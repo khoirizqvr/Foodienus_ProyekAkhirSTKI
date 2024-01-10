@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resep Favorit</title>
+  <style>
+    /* Reset CSS */
+    /* Untuk memastikan tampilan konsisten di berbagai browser */
+
+
+    /* Header Style */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    /* Container Style */
+    .container {
+      width: 80%;
+      margin-top: 80px;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Kolom Resep */
+    .recipe-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .recipe {
+      width: calc(25% - 20px);
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .recipe:hover {
+      transform: translateY(-5px);
+    }
+
+    .recipe img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .recipe a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Footer Style */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #333;
+      color: #fff;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #gambar-utama {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 20px; /* Atur margin sesuai kebutuhan */
+    }
+  </style>
+</head>
+<body>
+  {% include 'main.html' %}
+  <img src="{{ url_for('static', filename='gambar1.jpg') }}" alt="" id="gambar-utama">
+
+  <div class="container">
+
+    <h1>Resep tervaforit</h1>
+    <div class="recipe-columns">
+      <!-- Di sini Anda dapat menambahkan div untuk setiap resep -->
+      <div class="recipe">
+        <a href="https://cookpad.com/id/resep/17055473-opor-ayam-bumbu-kuning?ref=search&find_method=search_tab&search_term=opor%20ayam%20bumbu%20kuning">
+          <img src="https://img-global.cpcdn.com/recipes/cf0987fcd772df4e/1360x964cq70/opor-ayam-bumbu-kuning-foto-resep-utama.webp" alt="Resep 1">
+          <h3>Opor Ayam Bumbu Kuning</h3>
+          <p>Disukai oleh 10 orang</p>
+        </a>
+      </div>
+      <div class="recipe">
+        <a href="https://cookpad.com/id/resep/17183158-rawon?ref=guest_feed">
+          <img src="https://img-global.cpcdn.com/recipes/865b2ebedaccc699/1360x964cq70/rawon-foto-resep-utama.webp" alt="Resep 1">
+          <h3>Rawon</h3>
+          <p>Disukai oleh 20 orang</p>
+        </a>
+      </div>
+      <div class="recipe">
+        <a href="https://cookpad.com/id/resep/17113710-sate-lilit-ayam-keju?ref=search&search_term=sate%20lilit%20ayam">
+          <img src="https://img-global.cpcdn.com/recipes/00f7afbdfcae932a/1360x964cq70/sate-lilit-ayam-keju-foto-resep-utama.webp" alt="Resep 1">
+          <h3>Sate Lilit Ayam Keju</h3>
+          <p>Deskripsi singkat resep 1</p>
+        </a>
+      </div>
+      <div class="recipe">
+        <a href="https://cookpad.com/id/resep/17177108-nasi-goreng-bumbu-rendang?ref=search&search_term=rendang">
+          <img src="https://img-global.cpcdn.com/recipes/7aa94f5525def2d7/1360x964cq70/nasi-goreng-bumbu-rendang-foto-resep-utama.webp" alt="Resep 1">
+          <h3>Nasi Goreng Bumbu Rendang</h3>
+          <p>Deskripsi singkat resep 1</p>
+        </a>
+      </div>
+      <div class="recipe">
+        <a href="https://cookpad.com/id/resep/17190947-soto-seger-boyolali?ref=search&search_term=soto">
+          <img src="https://img-global.cpcdn.com/recipes/fa9f1fb0ad3ca893/1360x964cq70/soto-seger-boyolali-foto-resep-utama.webp" alt="Resep 1">
+          <h3>Soto Seger Boyolali</h3>
+          <p>Deskripsi singkat resep 1</p>
+        </a>
+      </div>
+      <div class="recipe">
+        <a href="https://cookpad.com/id/recipe/images/99f09954a2d159dd">
+          <img src="https://img-global.cpcdn.com/recipes/99f09954a2d159dd/640x640sq70/photo.webp" alt="Resep 1">
+          <h3>Cumi Bakar Teflon Bumbu Maranggi</h3>
+          <p>Deskripsi singkat resep 1</p>
+        </a>
+      </div>
+      <div class="recipe">
+        <a href="https://cookpad.com/id/recipe/images/45f7790e85a9ed8a">
+          <img src="https://img-global.cpcdn.com/recipes/45f7790e85a9ed8a/1360x964cq70/sop-iga-sapi-foto-resep-utama.webp" alt="Resep 1">
+          <h3>sop iga sapi</h3>
+          <p>Deskripsi singkat resep 1</p>
+        </a>
+      </div>
+      <div class="recipe">
+        <a href="https://cookpad.com/id/resep/16680450-bebek-ireng-pedas-khas-madura?ref=search&search_term=bebek%20hitam">
+          <img src="https://img-global.cpcdn.com/recipes/211435014d5f42c9/1360x964cq70/bebek-ireng-pedas-khas-madura-foto-resep-utama.webp" alt="Resep 1">
+          <h3>Bebek Ireng pedas khas madura</h3>
+          <p>Deskripsi singkat resep 1</p>
+        </a>
+      </div>
+      
+      <!-- Menambahkan div resep lainnya sesuai kebutuhan -->
+    </div>
+  </div>
+  
+      <br><br><br><br>
+      
+      <footer class="footer">
+        <div>
+            <p>&copy; 2023 Foodienus. All rights reserved. &emsp;&emsp; Alamat: Jalan Contoh No. 123, Kota, Negara &emsp;&emsp; Email: info@resepmasakan.com</p>
+        </div>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <style>    
+        .container {
+            position: fixed;
+            top: 75px;
+            left: 200px;
+            right: 200px;
+             /* Ubah lebar sesuai kebutuhan Anda */
+            background-color: #fff;
+            overflow-y: auto;
+            max-height: 80vh; /* Membatasi tinggi maksimum elemen */
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .result {
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .result h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .result p {
+            color: #666;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+        .result a {
+            text-decoration: none;
+            color: #ff6f61;
+            font-size: 18px;
+        }
+        .result a:hover {
+            text-decoration: underline;
+        }
+        p.message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+        .footer {
+        position: fixed;
+        bottom: 0;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0; /* Sesuaikan padding untuk konten footer */
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'main.html' %}
+
+    <div class="container">
+        <!-- <h1>Search Recipes</h1>
+        <form action="/cariresep" method="post">
+            <label for="query">Search for ingredients or recipe name:</label><br>
+            <input type="text" id="query" name="query" placeholder="E.g., Chicken, Pasta, etc."><br><br>
+            <input type="submit" value="Search">
+        </form> -->
+
+        {% if results %}
+        <h2>Search Results for "{{ query }}"</h2>
+        {% for result in results %}
+        <div class="result">
+            <a href="https://cookpad.com{{ result['URL'] }}" target="_blank">
+                <h2>{{ result['Title'] }}</h2>
+                <p>Ingredients: {{ result['Ingredients'] }}</p>
+            <!--    <p>Similarity: {{ result['Similarity'] }}</p>  -->
+            </a>
+        </div>
+        {% endfor %}
+        {% else %}
+        {% if message %}
+        <p class="message">{{ message }}</p>
+        {% endif %}
+        {% endif %}
+    </div>
+    <footer class="footer">
+        <div>
+            <p>&copy; 2023 Foodienus. All rights reserved. &emsp;&emsp; Alamat: Jalan Contoh No. 123, Kota, Negara &emsp;&emsp; Email: info@resepmasakan.com</p>
+        </div>
+    </footer>
+</body>
+
+</html>

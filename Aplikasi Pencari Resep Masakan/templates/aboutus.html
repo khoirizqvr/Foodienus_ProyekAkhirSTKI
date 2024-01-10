@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    /* Custom CSS */
+    /* Add your custom styles here */
+    .member {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .member-card {
+      text-align: center;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+      display: flex; /* Menggunakan flexbox */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; /* Memposisikan konten di tengah secara vertikal */
+      margin-left: 20px;
+    }
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+    .member-card img {
+      width: 150px; /* Atur ukuran gambar sesuai kebutuhan */
+      height: 150px; /* Atur ukuran gambar sesuai kebutuhan */
+      object-fit: cover; /* Menjaga aspek rasio gambar */
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+    .member-card:hover img {
+      transform: scale(1.1);
+    }
+    .member-name {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+    @media screen and (max-width: 600px) {
+      .member-card {
+        width: 80%;
+      }
+    }
+    /*footer*/
+    .footer {
+        position: fixed;
+        bottom: 0;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0; /* Sesuaikan padding untuk konten footer */
+        }
+  </style>
+  
+</head>
+<body>
+  <!-- Your existing code goes here -->
+  {% include 'main.html' %}
+  <div class="member" style="margin-top: 5%;">
+    <p class="member-description">Aplikasi Foodienus dibuat dalam rangka menyelesaikan tugas akhir mata kuliah sistem temu kembali informasi, dengan bimbingan dosen kami:</p>
+  </div>
+  <div class="member">
+    <div class="member-card">
+      <img src="{{ url_for('static', filename='dosen.jpg') }}" alt="Member 1">
+      <p class="member-name">ARDYTHA LUTHFIARTA, M.Kom</p>
+    </div>
+  </div>
+  <div class="member" style="margin-top: 0%;">
+    <p class="member-description">Dengan anggota tim, diantaranya:</p>
+  </div>
+  <div class="member">
+    <div class="member-card">
+      <img src="{{ url_for('static', filename='virnika.png') }}" alt="Member 1">
+      <p class="member-name">Virnika</p>
+    </div>
+    <div class="member-card">
+      <img src="{{ url_for('static', filename='simon.png') }}" alt="Member 2">
+      <p class="member-name">Simon</p>
+    </div>
+    <div class="member-card">
+      <img src="{{ url_for('static', filename='minanul.png') }}" alt="Member 2">
+      <p class="member-name">Minanul</p>
+    </div>
+    <div class="member-card">
+      <img src="{{ url_for('static', filename='zeda.png') }}" alt="Member 2">
+      <p class="member-name">Zeda</p>
+    </div>
+    <div class="member-card">
+      <img src="{{ url_for('static', filename='vela.png') }}" alt="Member 2">
+      <p class="member-name">Vela</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+        <p>&copy; 2023 Foodienus. All rights reserved. &emsp;&emsp; Alamat: Jalan Contoh No. 123, Kota, Negara &emsp;&emsp; Email: info@resepmasakan.com</p>
+    </div>
+</footer>
+</body>
+</html>
